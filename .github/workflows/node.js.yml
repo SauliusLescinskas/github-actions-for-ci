@@ -6,7 +6,10 @@ jobs:
   build:
 
     needs: build
-
+      - uses: actions/upload-artifact@master
+        with:
+          name: webpack artifacts
+          path: public/
     steps:
       - uses: actions/checkout@v2
       - name: npm install and build webpack
